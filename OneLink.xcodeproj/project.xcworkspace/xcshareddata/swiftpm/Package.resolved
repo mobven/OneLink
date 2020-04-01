@@ -3,7 +3,7 @@
     "pins": [
       {
         "package": "MMBKit",
-        "repositoryURL": "https://github.com/mobven/MMBKit",
+        "repositoryURL": "https://github.com/mobven/MMBKit.git",
         "state": {
           "branch": "develop",
           "revision": "294114a72dc33de8eedfd6d0221540249a20def0",
