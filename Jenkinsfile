@@ -67,9 +67,8 @@ node {
       sh "cp /Users/mobvenserver/sonar-project.properties ."
     }
   } catch (e) {
-    slackSend color: '#008000', message: "${SONAR_PROJECT_NAME} : Preparation Step Failed :face_with_symbols_on_mouth: Please Check Email Box :email: "
+    sh "bash /Users/mobvenserver/.jenkins/workspace/slack-message-broker.sh 'ErrorStage' '${ts}' '${SONAR_PROJECT_NAME}' '${env.BUILD_NUMBER}' '${env.BUILD_URL}' '${committerName}' '${env.BRANCH_NAME}' '${PROJECT_ICON}'"
     sendMail(committerEmail);
-    throw e
   }
 
   try {
@@ -79,9 +78,8 @@ node {
 
     }
   } catch (e) {
-    slackSend color: '#008000', message: "${SONAR_PROJECT_NAME} : Test Step Failed :face_with_symbols_on_mouth: Please Check Email Box :email: "
+    sh "bash /Users/mobvenserver/.jenkins/workspace/slack-message-broker.sh 'ErrorStage' '${ts}' '${SONAR_PROJECT_NAME}' '${env.BUILD_NUMBER}' '${env.BUILD_URL}' '${committerName}' '${env.BRANCH_NAME}' '${PROJECT_ICON}'"
     sendMail(committerEmail);
-    throw e
   }
 
   try {
@@ -90,9 +88,8 @@ node {
        sh "bash xccov-to-sonarqube-generic.sh Build/Logs/Test/*.xcresult/ > sonarqube-generic-coverage.xml"
     }
   } catch (e) {
-    slackSend color: '#008000', message: "${SONAR_PROJECT_NAME} : Coverage Generation Step Failed :face_with_symbols_on_mouth: Please Check Email Box :email: "
+    sh "bash /Users/mobvenserver/.jenkins/workspace/slack-message-broker.sh 'ErrorStage' '${ts}' '${SONAR_PROJECT_NAME}' '${env.BUILD_NUMBER}' '${env.BUILD_URL}' '${committerName}' '${env.BRANCH_NAME}' '${PROJECT_ICON}'"
     sendMail(committerEmail);
-    throw e
   }
 
   try {
@@ -103,9 +100,8 @@ node {
       }
     }
   } catch (e) {
-    slackSend color: '#008000', message: "${SONAR_PROJECT_NAME} : Quality Check Step Failed :face_with_symbols_on_mouth: Please Check Email Box :email: "
+    sh "bash /Users/mobvenserver/.jenkins/workspace/slack-message-broker.sh 'ErrorStage' '${ts}' '${SONAR_PROJECT_NAME}' '${env.BUILD_NUMBER}' '${env.BUILD_URL}' '${committerName}' '${env.BRANCH_NAME}' '${PROJECT_ICON}'"
     sendMail(committerEmail);
-    throw e
   }
 
     stage('Quality Gate'){
