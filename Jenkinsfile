@@ -70,7 +70,14 @@ node {
     sh "bash /Users/mobvenserver/.jenkins/workspace/slack-message-broker.sh 'ErrorStage' '${ts}' '${SONAR_PROJECT_NAME}' '${env.BUILD_NUMBER}' '${env.BUILD_URL}' '${committerName}' '${env.BRANCH_NAME}' '${PROJECT_ICON}'"
     sendMail(committerEmail);
   }
+    def commitMessage =  sh (
+    script: 'git log --format=format:%s -1',
+    returnStdout: true
+    ).trim()
 
+    def commitMessageFormat = commitMessage.substring(commitMessage.lastIndexOf("/")+1,commitMessage.length())
+    String [] ary;
+    ary = commitMessageFormat.split(',')
   try {
     stage('Test') {
        sh "bash /Users/mobvenserver/.jenkins/workspace/slack-message-broker.sh '${env.STAGE_NAME}' '${ts}' '${SONAR_PROJECT_NAME}' '${env.BUILD_NUMBER}' '${env.BUILD_URL}' '${committerName}' '${env.BRANCH_NAME}' '${PROJECT_ICON}'"
@@ -113,6 +120,10 @@ node {
           sh "bash /Users/mobvenserver/.jenkins/workspace/slack-message-broker.sh 'ErrorSQ2' '${ts}' '${SONAR_PROJECT_NAME}' '${env.BUILD_NUMBER}' '${env.BUILD_URL}' '${committerName}' '${env.BRANCH_NAME}' '${PROJECT_ICON}'"
           error "Pipeline aborted due to quality gate failure: ${qg.status}"
         }
+    }
+    stage ('Jira') {
+      for (String values : ary)
+      sh "bash /Users/mobvenserver/.jenkins/workspace/Jira-Updater.sh '${values}'"
     }
     sh "bash /Users/mobvenserver/.jenkins/workspace/slack-message-broker.sh 'Success' '${ts}' '${SONAR_PROJECT_NAME}' '${env.BUILD_NUMBER}' '${env.BUILD_URL}' '${committerName}' '${env.BRANCH_NAME}' '${PROJECT_ICON}'"
 }
