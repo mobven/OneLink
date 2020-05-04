@@ -67,11 +67,17 @@ node {
       sh "cp /Users/mobvenserver/sonar-project.properties ."
     }
   } catch (e) {
-    slackSend color: '#008000', message: "${SONAR_PROJECT_NAME} : Preparation Step Failed :face_with_symbols_on_mouth: Please Check Email Box :email: "
+    sh "bash /Users/mobvenserver/.jenkins/workspace/slack-message-broker.sh 'ErrorStage' '${ts}' '${SONAR_PROJECT_NAME}' '${env.BUILD_NUMBER}' '${env.BUILD_URL}' '${committerName}' '${env.BRANCH_NAME}' '${PROJECT_ICON}'"
     sendMail(committerEmail);
-    throw e
   }
+    def commitMessage =  sh (
+    script: 'git log --format=format:%s -1',
+    returnStdout: true
+    ).trim()
 
+    def commitMessageFormat = commitMessage.substring(commitMessage.lastIndexOf("/")+1,commitMessage.length())
+    String [] ary;
+    ary = commitMessageFormat.split(',')
   try {
     stage('Test') {
        sh "bash /Users/mobvenserver/.jenkins/workspace/slack-message-broker.sh '${env.STAGE_NAME}' '${ts}' '${SONAR_PROJECT_NAME}' '${env.BUILD_NUMBER}' '${env.BUILD_URL}' '${committerName}' '${env.BRANCH_NAME}' '${PROJECT_ICON}'"
@@ -79,9 +85,8 @@ node {
 
     }
   } catch (e) {
-    slackSend color: '#008000', message: "${SONAR_PROJECT_NAME} : Test Step Failed :face_with_symbols_on_mouth: Please Check Email Box :email: "
+    sh "bash /Users/mobvenserver/.jenkins/workspace/slack-message-broker.sh 'ErrorStage' '${ts}' '${SONAR_PROJECT_NAME}' '${env.BUILD_NUMBER}' '${env.BUILD_URL}' '${committerName}' '${env.BRANCH_NAME}' '${PROJECT_ICON}'"
     sendMail(committerEmail);
-    throw e
   }
 
   try {
@@ -90,9 +95,8 @@ node {
        sh "bash xccov-to-sonarqube-generic.sh Build/Logs/Test/*.xcresult/ > sonarqube-generic-coverage.xml"
     }
   } catch (e) {
-    slackSend color: '#008000', message: "${SONAR_PROJECT_NAME} : Coverage Generation Step Failed :face_with_symbols_on_mouth: Please Check Email Box :email: "
+    sh "bash /Users/mobvenserver/.jenkins/workspace/slack-message-broker.sh 'ErrorStage' '${ts}' '${SONAR_PROJECT_NAME}' '${env.BUILD_NUMBER}' '${env.BUILD_URL}' '${committerName}' '${env.BRANCH_NAME}' '${PROJECT_ICON}'"
     sendMail(committerEmail);
-    throw e
   }
 
   try {
@@ -103,9 +107,8 @@ node {
       }
     }
   } catch (e) {
-    slackSend color: '#008000', message: "${SONAR_PROJECT_NAME} : Quality Check Step Failed :face_with_symbols_on_mouth: Please Check Email Box :email: "
+    sh "bash /Users/mobvenserver/.jenkins/workspace/slack-message-broker.sh 'ErrorStage' '${ts}' '${SONAR_PROJECT_NAME}' '${env.BUILD_NUMBER}' '${env.BUILD_URL}' '${committerName}' '${env.BRANCH_NAME}' '${PROJECT_ICON}'"
     sendMail(committerEmail);
-    throw e
   }
 
     stage('Quality Gate'){
@@ -117,6 +120,10 @@ node {
           sh "bash /Users/mobvenserver/.jenkins/workspace/slack-message-broker.sh 'ErrorSQ2' '${ts}' '${SONAR_PROJECT_NAME}' '${env.BUILD_NUMBER}' '${env.BUILD_URL}' '${committerName}' '${env.BRANCH_NAME}' '${PROJECT_ICON}'"
           error "Pipeline aborted due to quality gate failure: ${qg.status}"
         }
+    }
+    stage ('Jira') {
+      for (String values : ary)
+      sh "bash /Users/mobvenserver/.jenkins/workspace/Jira-Updater.sh '${values}'"
     }
     sh "bash /Users/mobvenserver/.jenkins/workspace/slack-message-broker.sh 'Success' '${ts}' '${SONAR_PROJECT_NAME}' '${env.BUILD_NUMBER}' '${env.BUILD_URL}' '${committerName}' '${env.BRANCH_NAME}' '${PROJECT_ICON}'"
 }
