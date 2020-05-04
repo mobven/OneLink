@@ -70,14 +70,15 @@ node {
     sh "bash /Users/mobvenserver/.jenkins/workspace/slack-message-broker.sh 'ErrorStage' '${ts}' '${SONAR_PROJECT_NAME}' '${env.BUILD_NUMBER}' '${env.BUILD_URL}' '${committerName}' '${env.BRANCH_NAME}' '${PROJECT_ICON}'"
     sendMail(committerEmail);
   }
-    def commitMessage =  sh (
-    script: 'git log --format=format:%s -1',
+    def commitMessage =  sh ( 
+    script: 'git log --format=format:%s -1', // find commitMessage
     returnStdout: true
     ).trim()
-
-    def commitMessageFormat = commitMessage.substring(commitMessage.lastIndexOf("/")+1,commitMessage.length())
+    def regex = /[A-Z]{2,3}-\d{1,3}/
+    def commitMessageFormat = (commitMessage =~ regex).findAll() //convert format
     String [] ary;
-    ary = commitMessageFormat.split(',')
+    ary = commitMessageFormat //convert array 
+
   try {
     stage('Test') {
        sh "bash /Users/mobvenserver/.jenkins/workspace/slack-message-broker.sh '${env.STAGE_NAME}' '${ts}' '${SONAR_PROJECT_NAME}' '${env.BUILD_NUMBER}' '${env.BUILD_URL}' '${committerName}' '${env.BRANCH_NAME}' '${PROJECT_ICON}'"
@@ -122,8 +123,13 @@ node {
         }
     }
     stage ('Jira') {
-      for (String values : ary)
-      sh "bash /Users/mobvenserver/.jenkins/workspace/Jira-Updater.sh '${values}'"
+      if (commitMessageFormat.size() == 0){
+        sh "bash /Users/mobvenserver/.jenkins/workspace/slack-message-broker.sh 'Success' '${ts}' '${SONAR_PROJECT_NAME}' '${env.BUILD_NUMBER}' '${env.BUILD_URL}' '${committerName}' '${env.BRANCH_NAME}' '${PROJECT_ICON}'"
+      } else {
+        for (String values : ary)
+        sh "bash /Users/mobvenserver/.jenkins/workspace/Jira-Updater.sh '${values}'"
+        sh "bash /Users/mobvenserver/.jenkins/workspace/slack-message-broker.sh 'Success' '${ts}' '${SONAR_PROJECT_NAME}' '${env.BUILD_NUMBER}' '${env.BUILD_URL}' '${committerName}' '${env.BRANCH_NAME}' '${PROJECT_ICON}'"
+      }
     }
-    sh "bash /Users/mobvenserver/.jenkins/workspace/slack-message-broker.sh 'Success' '${ts}' '${SONAR_PROJECT_NAME}' '${env.BUILD_NUMBER}' '${env.BUILD_URL}' '${committerName}' '${env.BRANCH_NAME}' '${PROJECT_ICON}'"
+
 }
