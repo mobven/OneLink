@@ -5,6 +5,7 @@ OneLink provides an easy-navigation for deeplinks which can be triggered by a pu
 
 First of all, you need to create an `enum` which conforms to  `OneLinkable`. Basically, OneLinkable is a protocol to allow your app to navigate to provided viewController by checking its state variable to navigate either `immediately`, or by `waitingForApproval`. Links waiting for approval are waiting for a confirmation before presentation, while `immediate` links are presented immediately. 
 ```swift
+import OneLink
 enum AppLink: OneLinkable {
     case announcements
     
