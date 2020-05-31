@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "MMBKit",
+        "repositoryURL": "https://github.com/mobven/MMBKit.git",
+        "state": {
+          "branch": "develop",
+          "revision": "4219fb33f1b440bc6f8b1aba7bad6d14faffbfd8",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
