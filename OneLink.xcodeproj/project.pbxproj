@@ -15,7 +15,7 @@
 		6D93204F2434C53E004C8A3C /* OneLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9320412434C53E004C8A3C /* OneLink.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6D93205E2434C64B004C8A3C /* OneLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D93205D2434C64B004C8A3C /* OneLink.swift */; };
 		6D9320692434C7E5004C8A3C /* OneLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9320672434C73B004C8A3C /* OneLinkTests.swift */; };
-		6D93206F2434C8EF004C8A3C /* MMBKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6D93206E2434C8EF004C8A3C /* MMBKit */; };
+		6F58DB8924A1FEA700B23D79 /* MobKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6F58DB8824A1FEA700B23D79 /* MobKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D93206F2434C8EF004C8A3C /* MMBKit in Frameworks */,
+				6F58DB8924A1FEA700B23D79 /* MobKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,7 +191,7 @@
 			);
 			name = OneLink;
 			packageProductDependencies = (
-				6D93206E2434C8EF004C8A3C /* MMBKit */,
+				6F58DB8824A1FEA700B23D79 /* MobKit */,
 			);
 			productName = OneLink;
 			productReference = 6D93203E2434C53E004C8A3C /* OneLink.framework */;
@@ -243,7 +243,7 @@
 			);
 			mainGroup = 6D9320342434C53E004C8A3C;
 			packageReferences = (
-				6D93206D2434C8EF004C8A3C /* XCRemoteSwiftPackageReference "MMBKit" */,
+				6F58DB8724A1FEA700B23D79 /* XCRemoteSwiftPackageReference "MobKit" */,
 			);
 			productRefGroup = 6D93203F2434C53E004C8A3C /* Products */;
 			projectDirPath = "";
@@ -564,9 +564,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		6D93206D2434C8EF004C8A3C /* XCRemoteSwiftPackageReference "MMBKit" */ = {
+		6F58DB8724A1FEA700B23D79 /* XCRemoteSwiftPackageReference "MobKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mobven/MMBKit.git";
+			repositoryURL = "https://github.com/mobven/MobKit.git";
 			requirement = {
 				branch = develop;
 				kind = branch;
@@ -575,10 +575,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6D93206E2434C8EF004C8A3C /* MMBKit */ = {
+		6F58DB8824A1FEA700B23D79 /* MobKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6D93206D2434C8EF004C8A3C /* XCRemoteSwiftPackageReference "MMBKit" */;
-			productName = MMBKit;
+			package = 6F58DB8724A1FEA700B23D79 /* XCRemoteSwiftPackageReference "MobKit" */;
+			productName = MobKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

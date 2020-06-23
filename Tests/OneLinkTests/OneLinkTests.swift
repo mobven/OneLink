@@ -8,13 +8,13 @@
 
 import XCTest
 @testable import OneLink
-@testable import MMBKit
+@testable import MobKit
 
 class OneLinkTests: XCTestCase {
     
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        MMBKit.setup(with: [OneLinkSpy.sharedSpy])
+//        MobKit.setup(with: [OneLinkSpy.sharedSpy])
     }
     
     func testImmediateLink() {

@@ -75,7 +75,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         /// Pass url parameter from the payload to `OneLink` instance.
         if let url = response.notification.request.content.userInfo["gcm.notification.data"] as? String,
             let link = AppLink(url: url) {
-            OneLink.shared.present(oneLink: link, ignoreLinkState: User.shared.isLoggedIn)
+            OneLink.shared().present(oneLink: link, ignoreLinkState: User.shared.isLoggedIn)
         }
         completionHandler()
     }
@@ -109,7 +109,7 @@ And lastly,
 func application(_ app: UIApplication, open url: URL,
                  options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
     if let link = AppLink(url: url) {
-        OneLink.shared.present(oneLink: link, ignoreLinkState: User.shared.isLoggedIn)
+        OneLink.shared().present(oneLink: link, ignoreLinkState: User.shared.isLoggedIn)
         return true
     }
     // Continue for your app's normal flow.
@@ -119,7 +119,7 @@ func application(_ app: UIApplication, open url: URL,
 
 If your app has links with state `waitingForApproval`, do not forget to call `presentPendingLinks` function when the criteria for pending links is met (eg. user is logged in).
 ```swift
-OneLink.shared.presentPendingLinks()
+OneLink.shared().presentPendingLinks()
 ```
 
 ```
