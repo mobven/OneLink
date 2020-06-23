@@ -17,7 +17,7 @@ internal class OneLinkViewController: UIViewController {
     }
     
     deinit {
-        OneLink.shared.oneLinkViewControllerDeInit()
+        OneLink.shared().oneLinkViewControllerDeInit()
     }
     
     @available(iOS, unavailable, message: "init(coder:) has not been supported")

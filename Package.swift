@@ -15,7 +15,7 @@ let package = Package(
             targets: ["OneLink"])
     ],
     dependencies: [
-        .package(url: "https://github.com/mobven/MMBKit.git", .branch("develop"))
+        .package(url: "https://github.com/mobven/MobKit.git", .branch("develop"))
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -23,7 +23,7 @@ let package = Package(
         // and on products in packages which this package depends on.
         .target(
             name: "OneLink",
-            dependencies: ["MMBKit"]),
+            dependencies: ["MobKit"]),
         .testTarget(
             name: "OneLinkTests",
             dependencies: ["OneLink"])

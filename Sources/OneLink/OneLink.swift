@@ -7,16 +7,7 @@
 //
 
 import UIKit
-import MMBKit
-
-// MARK: - Setup
-extension OneLink: MBComponent {
-    
-    public func setup() {
-        
-    }
-    
-}
+import MobKit
 
 /// Protocol to achieve OneLink navigation within your application.
 public protocol OneLinkable {
@@ -40,10 +31,28 @@ public protocol OneLinkDelegate: class {
 }
 
 /// Manager for deeplinks and push notification navigations.
-public class OneLink {
+public class OneLink: MobKitComponent {
     
     /// `OneLink` singleton instance.
-    public static let shared: OneLink = OneLink()
+    static var instance: OneLink?
+    /// `OneLink` singleton instance.
+    public override class func shared() -> Self {
+        if instance == nil {
+            self.instance = OneLink()
+        }
+        guard let sharedInstance = self.instance as? Self else {
+            fatalError("Could not cast OneLink")
+        }
+        return sharedInstance
+    }
+    
+    override init() {
+        super.init()
+    }
+    
+    public override func setup() {
+        
+    }
     
     internal var pendingLinks: [OneLinkable] = []
     
@@ -86,7 +95,7 @@ public class OneLink {
             delegate?.oneLinkAllLinksCompleted()
             return
         }
-        OneLink.shared.presentPendingLinks()
+        OneLink.shared().presentPendingLinks()
     }
     
 }
