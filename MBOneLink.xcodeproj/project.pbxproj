@@ -11,7 +11,7 @@
 		6D7B620A24378AEE00BF5DC9 /* UIViewContController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7B620924378AEE00BF5DC9 /* UIViewContController+Extension.swift */; };
 		6D8BA18E243A34C9004493A9 /* TestLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8BA18C243A34C2004493A9 /* TestLink.swift */; };
 		6D8BA192243A3792004493A9 /* OneLinkSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8BA190243A378F004493A9 /* OneLinkSpy.swift */; };
-		6D9320482434C53E004C8A3C /* OneLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D93203E2434C53E004C8A3C /* OneLink.framework */; };
+		6D9320482434C53E004C8A3C /* MBOneLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D93203E2434C53E004C8A3C /* MBOneLink.framework */; };
 		6D93204F2434C53E004C8A3C /* OneLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9320412434C53E004C8A3C /* OneLink.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6D93205E2434C64B004C8A3C /* OneLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D93205D2434C64B004C8A3C /* OneLink.swift */; };
 		6D9320692434C7E5004C8A3C /* OneLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9320672434C73B004C8A3C /* OneLinkTests.swift */; };
@@ -34,10 +34,10 @@
 		6D7B620924378AEE00BF5DC9 /* UIViewContController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewContController+Extension.swift"; sourceTree = "<group>"; };
 		6D8BA18C243A34C2004493A9 /* TestLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLink.swift; sourceTree = "<group>"; };
 		6D8BA190243A378F004493A9 /* OneLinkSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLinkSpy.swift; sourceTree = "<group>"; };
-		6D93203E2434C53E004C8A3C /* OneLink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OneLink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D93203E2434C53E004C8A3C /* MBOneLink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBOneLink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D9320412434C53E004C8A3C /* OneLink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OneLink.h; sourceTree = "<group>"; };
 		6D9320422434C53E004C8A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6D9320472434C53E004C8A3C /* OneLinkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneLinkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D9320472434C53E004C8A3C /* MBOneLinkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MBOneLinkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D93204E2434C53E004C8A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D9320592434C5CB004C8A3C /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		6D93205A2434C5D2004C8A3C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D9320482434C53E004C8A3C /* OneLink.framework in Frameworks */,
+				6D9320482434C53E004C8A3C /* MBOneLink.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,8 +99,8 @@
 		6D93203F2434C53E004C8A3C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6D93203E2434C53E004C8A3C /* OneLink.framework */,
-				6D9320472434C53E004C8A3C /* OneLinkTests.xctest */,
+				6D93203E2434C53E004C8A3C /* MBOneLink.framework */,
+				6D9320472434C53E004C8A3C /* MBOneLinkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -175,9 +175,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6D93203D2434C53E004C8A3C /* OneLink */ = {
+		6D93203D2434C53E004C8A3C /* MBOneLink */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D9320522434C53E004C8A3C /* Build configuration list for PBXNativeTarget "OneLink" */;
+			buildConfigurationList = 6D9320522434C53E004C8A3C /* Build configuration list for PBXNativeTarget "MBOneLink" */;
 			buildPhases = (
 				6D9320392434C53E004C8A3C /* Headers */,
 				6D9320582434C57D004C8A3C /* SwiftLint */,
@@ -189,17 +189,17 @@
 			);
 			dependencies = (
 			);
-			name = OneLink;
+			name = MBOneLink;
 			packageProductDependencies = (
 				6F58DB8824A1FEA700B23D79 /* MobKit */,
 			);
 			productName = OneLink;
-			productReference = 6D93203E2434C53E004C8A3C /* OneLink.framework */;
+			productReference = 6D93203E2434C53E004C8A3C /* MBOneLink.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		6D9320462434C53E004C8A3C /* OneLinkTests */ = {
+		6D9320462434C53E004C8A3C /* MBOneLinkTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D9320552434C53E004C8A3C /* Build configuration list for PBXNativeTarget "OneLinkTests" */;
+			buildConfigurationList = 6D9320552434C53E004C8A3C /* Build configuration list for PBXNativeTarget "MBOneLinkTests" */;
 			buildPhases = (
 				6D9320432434C53E004C8A3C /* Sources */,
 				6D9320442434C53E004C8A3C /* Frameworks */,
@@ -210,9 +210,9 @@
 			dependencies = (
 				6D93204A2434C53E004C8A3C /* PBXTargetDependency */,
 			);
-			name = OneLinkTests;
+			name = MBOneLinkTests;
 			productName = OneLinkTests;
-			productReference = 6D9320472434C53E004C8A3C /* OneLinkTests.xctest */;
+			productReference = 6D9320472434C53E004C8A3C /* MBOneLinkTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -233,7 +233,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6D9320382434C53E004C8A3C /* Build configuration list for PBXProject "OneLink" */;
+			buildConfigurationList = 6D9320382434C53E004C8A3C /* Build configuration list for PBXProject "MBOneLink" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -249,8 +249,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6D93203D2434C53E004C8A3C /* OneLink */,
-				6D9320462434C53E004C8A3C /* OneLinkTests */,
+				6D93203D2434C53E004C8A3C /* MBOneLink */,
+				6D9320462434C53E004C8A3C /* MBOneLinkTests */,
 			);
 		};
 /* End PBXProject section */
@@ -319,7 +319,7 @@
 /* Begin PBXTargetDependency section */
 		6D93204A2434C53E004C8A3C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6D93203D2434C53E004C8A3C /* OneLink */;
+			target = 6D93203D2434C53E004C8A3C /* MBOneLink */;
 			targetProxy = 6D9320492434C53E004C8A3C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -448,9 +448,10 @@
 		6D9320532434C53E004C8A3C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = RE9892F24F;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -472,9 +473,10 @@
 		6D9320542434C53E004C8A3C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = RE9892F24F;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -534,7 +536,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6D9320382434C53E004C8A3C /* Build configuration list for PBXProject "OneLink" */ = {
+		6D9320382434C53E004C8A3C /* Build configuration list for PBXProject "MBOneLink" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D9320502434C53E004C8A3C /* Debug */,
@@ -543,7 +545,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6D9320522434C53E004C8A3C /* Build configuration list for PBXNativeTarget "OneLink" */ = {
+		6D9320522434C53E004C8A3C /* Build configuration list for PBXNativeTarget "MBOneLink" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D9320532434C53E004C8A3C /* Debug */,
@@ -552,7 +554,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6D9320552434C53E004C8A3C /* Build configuration list for PBXNativeTarget "OneLinkTests" */ = {
+		6D9320552434C53E004C8A3C /* Build configuration list for PBXNativeTarget "MBOneLinkTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D9320562434C53E004C8A3C /* Debug */,
