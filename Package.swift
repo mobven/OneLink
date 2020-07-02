@@ -4,15 +4,15 @@
 import PackageDescription
 
 let package = Package(
-    name: "OneLink",
+    name: "MBOneLink",
     platforms: [
         .iOS(.v10)
     ],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
-            name: "OneLink",
-            targets: ["OneLink"])
+            name: "MBOneLink",
+            targets: ["MBOneLink"])
     ],
     dependencies: [
         .package(url: "https://github.com/mobven/MobKit.git", .branch("develop"))
@@ -22,10 +22,10 @@ let package = Package(
         // Targets can depend on other targets in this package,
         // and on products in packages which this package depends on.
         .target(
-            name: "OneLink",
-            dependencies: ["MobKit"]),
+            name: "MBOneLink",
+            dependencies: ["MobKitCore"]),
         .testTarget(
-            name: "OneLinkTests",
-            dependencies: ["OneLink"])
+            name: "MBOneLinkTests",
+            dependencies: ["MBOneLink"])
     ]
 )

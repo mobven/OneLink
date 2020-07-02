@@ -7,7 +7,7 @@
 //
 
 import UIKit
-@testable import OneLink
+@testable import MBOneLink
 
 enum TestLink: OneLinkable {
     
