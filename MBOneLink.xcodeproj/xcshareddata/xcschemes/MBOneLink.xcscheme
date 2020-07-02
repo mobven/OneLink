@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6D93203D2434C53E004C8A3C"
-               BuildableName = "OneLink.framework"
-               BlueprintName = "OneLink"
-               ReferencedContainer = "container:OneLink.xcodeproj">
+               BuildableName = "MBOneLink.framework"
+               BlueprintName = "MBOneLink"
+               ReferencedContainer = "container:MBOneLink.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6D93203D2434C53E004C8A3C"
-            BuildableName = "OneLink.framework"
-            BlueprintName = "OneLink"
-            ReferencedContainer = "container:OneLink.xcodeproj">
+            BuildableName = "MBOneLink.framework"
+            BlueprintName = "MBOneLink"
+            ReferencedContainer = "container:MBOneLink.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
@@ -44,9 +44,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6D9320462434C53E004C8A3C"
-               BuildableName = "OneLinkTests.xctest"
-               BlueprintName = "OneLinkTests"
-               ReferencedContainer = "container:OneLink.xcodeproj">
+               BuildableName = "MBOneLinkTests.xctest"
+               BlueprintName = "MBOneLinkTests"
+               ReferencedContainer = "container:MBOneLink.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6D93203D2434C53E004C8A3C"
-            BuildableName = "OneLink.framework"
-            BlueprintName = "OneLink"
-            ReferencedContainer = "container:OneLink.xcodeproj">
+            BuildableName = "MBOneLink.framework"
+            BlueprintName = "MBOneLink"
+            ReferencedContainer = "container:MBOneLink.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

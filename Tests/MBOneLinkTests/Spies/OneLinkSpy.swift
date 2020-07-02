@@ -7,7 +7,7 @@
 //
 
 import Foundation
-@testable import OneLink
+@testable import MBOneLink
 
 class OneLinkSpy: OneLink {
     

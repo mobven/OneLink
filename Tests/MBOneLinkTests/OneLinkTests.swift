@@ -7,8 +7,8 @@
 //
 
 import XCTest
-@testable import OneLink
-@testable import MobKit
+@testable import MBOneLink
+@testable import MobKitCore
 
 class OneLinkTests: XCTestCase {
     
@@ -53,7 +53,7 @@ class OneLinkTests: XCTestCase {
         }
         
         XCTAssert(OneLinkSpy.sharedSpy.pendingLinks.count == 1)
-        wait(for: [expectation], timeout: 2)
+        wait(for: [expectation], timeout: 3)
         XCTAssert(OneLinkSpy.sharedSpy.pendingLinks.count == 0)
     }
     

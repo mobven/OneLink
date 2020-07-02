@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MobKit
+import MobKitCore
 
 /// Protocol to achieve OneLink navigation within your application.
 public protocol OneLinkable {
