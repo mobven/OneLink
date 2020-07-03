@@ -15,7 +15,7 @@ let package = Package(
             targets: ["MBOneLink"])
     ],
     dependencies: [
-        .package(url: "https://github.com/mobven/MobKit.git", .branch("develop"))
+        .package(url: "https://github.com/mobven/MobKitCore.git", .branch("develop"))
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
