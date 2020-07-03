@@ -88,8 +88,8 @@
 			children = (
 				6D93205A2434C5D2004C8A3C /* README.md */,
 				6D9320592434C5CB004C8A3C /* Package.swift */,
-				6D9320402434C53E004C8A3C /* OneLink */,
-				6D93204B2434C53E004C8A3C /* OneLinkTests */,
+				6D9320402434C53E004C8A3C /* MBOneLink */,
+				6D93204B2434C53E004C8A3C /* MBOneLinkTests */,
 				6D93205B2434C64B004C8A3C /* Sources */,
 				6D9320622434C700004C8A3C /* Tests */,
 				6D93203F2434C53E004C8A3C /* Products */,
@@ -105,21 +105,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6D9320402434C53E004C8A3C /* OneLink */ = {
+		6D9320402434C53E004C8A3C /* MBOneLink */ = {
 			isa = PBXGroup;
 			children = (
 				6D9320412434C53E004C8A3C /* OneLink.h */,
 				6D9320422434C53E004C8A3C /* Info.plist */,
 			);
-			path = OneLink;
+			path = MBOneLink;
 			sourceTree = "<group>";
 		};
-		6D93204B2434C53E004C8A3C /* OneLinkTests */ = {
+		6D93204B2434C53E004C8A3C /* MBOneLinkTests */ = {
 			isa = PBXGroup;
 			children = (
 				6D93204E2434C53E004C8A3C /* Info.plist */,
 			);
-			path = OneLinkTests;
+			path = MBOneLinkTests;
 			sourceTree = "<group>";
 		};
 		6D93205B2434C64B004C8A3C /* Sources */ = {
@@ -455,7 +455,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = OneLink/Info.plist;
+				INFOPLIST_FILE = MBOneLink/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -481,7 +481,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = OneLink/Info.plist;
+				INFOPLIST_FILE = MBOneLink/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -503,7 +503,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RE9892F24F;
-				INFOPLIST_FILE = OneLinkTests/Info.plist;
+				INFOPLIST_FILE = MBOneLinkTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -522,7 +522,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RE9892F24F;
-				INFOPLIST_FILE = OneLinkTests/Info.plist;
+				INFOPLIST_FILE = MBOneLinkTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
