@@ -15,7 +15,7 @@
 		6D93204F2434C53E004C8A3C /* OneLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9320412434C53E004C8A3C /* OneLink.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6D93205E2434C64B004C8A3C /* OneLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D93205D2434C64B004C8A3C /* OneLink.swift */; };
 		6D9320692434C7E5004C8A3C /* OneLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9320672434C73B004C8A3C /* OneLinkTests.swift */; };
-		6DBA672524AE2C0A000E977D /* MobKitCore in Frameworks */ = {isa = PBXBuildFile; productRef = 6DBA672424AE2C0A000E977D /* MobKitCore */; };
+		6DCCBC7324B31CFB0007177D /* MobKitCore in Frameworks */ = {isa = PBXBuildFile; productRef = 6DCCBC7224B31CFB0007177D /* MobKitCore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DBA672524AE2C0A000E977D /* MobKitCore in Frameworks */,
+				6DCCBC7324B31CFB0007177D /* MobKitCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,7 +191,7 @@
 			);
 			name = MBOneLink;
 			packageProductDependencies = (
-				6DBA672424AE2C0A000E977D /* MobKitCore */,
+				6DCCBC7224B31CFB0007177D /* MobKitCore */,
 			);
 			productName = OneLink;
 			productReference = 6D93203E2434C53E004C8A3C /* MBOneLink.framework */;
@@ -243,7 +243,7 @@
 			);
 			mainGroup = 6D9320342434C53E004C8A3C;
 			packageReferences = (
-				6DBA672324AE2C0A000E977D /* XCRemoteSwiftPackageReference "MobKit" */,
+				6DCCBC7124B31CFB0007177D /* XCRemoteSwiftPackageReference "MobKitCore" */,
 			);
 			productRefGroup = 6D93203F2434C53E004C8A3C /* Products */;
 			projectDirPath = "";
@@ -568,9 +568,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		6DBA672324AE2C0A000E977D /* XCRemoteSwiftPackageReference "MobKit" */ = {
+		6DCCBC7124B31CFB0007177D /* XCRemoteSwiftPackageReference "MobKitCore" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mobven/MobKit.git";
+			repositoryURL = "https://github.com/mobven/MobKitCore.git";
 			requirement = {
 				branch = develop;
 				kind = branch;
@@ -579,9 +579,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6DBA672424AE2C0A000E977D /* MobKitCore */ = {
+		6DCCBC7224B31CFB0007177D /* MobKitCore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6DBA672324AE2C0A000E977D /* XCRemoteSwiftPackageReference "MobKit" */;
+			package = 6DCCBC7124B31CFB0007177D /* XCRemoteSwiftPackageReference "MobKitCore" */;
 			productName = MobKitCore;
 		};
 /* End XCSwiftPackageProductDependency section */
