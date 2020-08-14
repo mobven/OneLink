@@ -22,7 +22,7 @@ def sendMail(userMail){
 }
 
 node {
-    def committerEmail = sh (
+    /*def committerEmail = sh (
         script: 'git --no-pager show -s --format=\'%ae\'',
         returnStdout: true
     ).trim();
@@ -30,10 +30,10 @@ node {
     def committerName = sh (
         script: 'git --no-pager show -s --format=\'%an\'',
         returnStdout: true
-    ).trim();
+    ).trim();*/
 
-  // def committerEmail = "onur.polat@mobven.com";
-  // def committerName = "Onur POLAT";
+    def committerEmail = "onur.polat@mobven.com";
+    def committerName = "Onur POLAT";
     def ts = "";
     def PROJECT_ICON = "https://www.amchamksv.org/wp-content/uploads/2018/05/bkt.png";
     def WORKSPACE = pwd();
@@ -42,7 +42,7 @@ node {
     // SonarQube Configuration
     def SONAR_PROJECT_KEY = "com.mobven.ios.oneLink.sb";
     def SONAR_PROJECT_NAME = "OneLink";
-    def SONAR_KEY = "0c15b3e6e94f81d28f88bf2a50b446cdb1c8fe83";
+    def SONAR_KEY = "77e23545c9e2f20f96a93b0ffd8b83811471fcb3";
     def SONAR_URL = "http://farm.mobven.com:9000";
     def COVERAGE_PATH = "sonarqube-generic-coverage.xml";
     def SLACK_DATA = "'${SONAR_PROJECT_NAME}' '${env.BUILD_NUMBER}' '${env.BUILD_URL}' '${committerName}' '${env.BRANCH_NAME}' '${PROJECT_ICON}'";
