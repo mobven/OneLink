@@ -43,7 +43,7 @@ node {
     def SONAR_PROJECT_KEY = "com.mobven.ios.oneLink.sb";
     def SONAR_PROJECT_NAME = "OneLink";
     def SONAR_KEY = "0c15b3e6e94f81d28f88bf2a50b446cdb1c8fe83";
-    def SONAR_URL = "http://192.168.1.240:9000";
+    def SONAR_URL = "http://farm.mobven.com:9000";
     def COVERAGE_PATH = "sonarqube-generic-coverage.xml";
     def SLACK_DATA = "'${SONAR_PROJECT_NAME}' '${env.BUILD_NUMBER}' '${env.BUILD_URL}' '${committerName}' '${env.BRANCH_NAME}' '${PROJECT_ICON}'";
     def SLACK_SH = "/Users/mobvenserver/.jenkins/workspace/slack-message-broker.sh";
