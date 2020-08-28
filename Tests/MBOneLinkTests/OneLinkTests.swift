@@ -8,7 +8,6 @@
 
 import XCTest
 @testable import MBOneLink
-@testable import MobKitCore
 
 class OneLinkTests: XCTestCase {
     
