@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		6D7B62082437810E00BF5DC9 /* OneLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7B62072437810E00BF5DC9 /* OneLinkViewController.swift */; };
 		6D7B620A24378AEE00BF5DC9 /* UIViewContController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7B620924378AEE00BF5DC9 /* UIViewContController+Extension.swift */; };
+		6D7BE47D24F7DC48004A1C1B /* MobKitCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7BE47C24F7DC47004A1C1B /* MobKitCore.xcframework */; };
 		6D8BA18E243A34C9004493A9 /* TestLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8BA18C243A34C2004493A9 /* TestLink.swift */; };
 		6D8BA192243A3792004493A9 /* OneLinkSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8BA190243A378F004493A9 /* OneLinkSpy.swift */; };
 		6D9320482434C53E004C8A3C /* MBOneLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D93203E2434C53E004C8A3C /* MBOneLink.framework */; };
 		6D93204F2434C53E004C8A3C /* OneLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9320412434C53E004C8A3C /* OneLink.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6D93205E2434C64B004C8A3C /* OneLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D93205D2434C64B004C8A3C /* OneLink.swift */; };
 		6D9320692434C7E5004C8A3C /* OneLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9320672434C73B004C8A3C /* OneLinkTests.swift */; };
-		6DCCBC7324B31CFB0007177D /* MobKitCore in Frameworks */ = {isa = PBXBuildFile; productRef = 6DCCBC7224B31CFB0007177D /* MobKitCore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +32,7 @@
 		6D7B61F52437248B00BF5DC9 /* OneLinkPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = OneLinkPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6D7B62072437810E00BF5DC9 /* OneLinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLinkViewController.swift; sourceTree = "<group>"; };
 		6D7B620924378AEE00BF5DC9 /* UIViewContController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewContController+Extension.swift"; sourceTree = "<group>"; };
+		6D7BE47C24F7DC47004A1C1B /* MobKitCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MobKitCore.xcframework; sourceTree = "<group>"; };
 		6D8BA18C243A34C2004493A9 /* TestLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLink.swift; sourceTree = "<group>"; };
 		6D8BA190243A378F004493A9 /* OneLinkSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLinkSpy.swift; sourceTree = "<group>"; };
 		6D93203E2434C53E004C8A3C /* MBOneLink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBOneLink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DCCBC7324B31CFB0007177D /* MobKitCore in Frameworks */,
+				6D7BE47D24F7DC48004A1C1B /* MobKitCore.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +68,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D7BE47B24F7DC47004A1C1B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D7BE47C24F7DC47004A1C1B /* MobKitCore.xcframework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 		6D8BA18B243A34A9004493A9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +102,7 @@
 				6D93205B2434C64B004C8A3C /* Sources */,
 				6D9320622434C700004C8A3C /* Tests */,
 				6D93203F2434C53E004C8A3C /* Products */,
+				6D7BE47B24F7DC47004A1C1B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,7 +201,6 @@
 			);
 			name = MBOneLink;
 			packageProductDependencies = (
-				6DCCBC7224B31CFB0007177D /* MobKitCore */,
 			);
 			productName = OneLink;
 			productReference = 6D93203E2434C53E004C8A3C /* MBOneLink.framework */;
@@ -243,7 +252,6 @@
 			);
 			mainGroup = 6D9320342434C53E004C8A3C;
 			packageReferences = (
-				6DCCBC7124B31CFB0007177D /* XCRemoteSwiftPackageReference "MobKitCore" */,
 			);
 			productRefGroup = 6D93203F2434C53E004C8A3C /* Products */;
 			projectDirPath = "";
@@ -566,25 +574,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		6DCCBC7124B31CFB0007177D /* XCRemoteSwiftPackageReference "MobKitCore" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mobven/MobKitCore.git";
-			requirement = {
-				branch = develop;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		6DCCBC7224B31CFB0007177D /* MobKitCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6DCCBC7124B31CFB0007177D /* XCRemoteSwiftPackageReference "MobKitCore" */;
-			productName = MobKitCore;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6D9320352434C53E004C8A3C /* Project object */;
 }
