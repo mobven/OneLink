@@ -14,7 +14,7 @@ enum TestLink: OneLinkable {
     case immediate
     case waitingForApproval
     
-    var viewController: UIViewController {
+    var viewController: UIViewController? {
         let linkViewController = UIViewController()
         switch self {
         case .immediate:

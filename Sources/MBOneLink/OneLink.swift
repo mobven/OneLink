@@ -12,22 +12,27 @@ import MobKitCore
 /// Protocol to achieve OneLink navigation within your application.
 public protocol OneLinkable {
     /// View controller of the link.
-    var viewController: UIViewController { get }
+    /// Return nil, navigation will continue with OneLinkDelegate.oneLinkPendingNavigation().
+    var viewController: UIViewController? { get }
     /// State of the link.
     var state: OneLinkableState { get }
 }
 
-public enum OneLinkableState {
+public enum OneLinkableState: Int, RawRepresentable {
+    
     /// OneLinks with `immediate` type will be navigated immediately when received.
     case immediate
     /// Links waiting for approval. Will be kept in the `OneLink.shared` instance until `presentPendingLinks()` called.
     case waitingForApproval
+    
 }
 
 /// Delegate to inform you about OneLink navigations.
 public protocol OneLinkDelegate: class {
     /// Called when there is no link to be presented so that your application can continue to its regular flow.
     func oneLinkAllLinksCompleted()
+    /// Called when deeplink has no view controller, and application should navigate, manually.
+    func oneLinkPendingNavigation(_ oneLink: OneLinkable)
 }
 
 /// Manager for deeplinks and push notification navigations.
@@ -84,10 +89,18 @@ public class OneLink: MobKitComponent {
     }
     
     private func navigateToLink(_ oneLink: OneLinkable) {
-        let parentController = OneLinkViewController(with: oneLink.viewController)
-        UIApplication.shared.keyWindow?.rootViewController?.visibleViewController?.present(
-            parentController, animated: true, completion: nil
-        )
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { [weak self] in
+            guard let viewController = oneLink.viewController else {
+                self?.delegate?.oneLinkPendingNavigation(oneLink)
+                return
+            }
+            DeinitObserver.onObjectDeinit(forObject: viewController) { [weak self] in
+                self?.oneLinkViewControllerDeInit()
+            }
+            UIApplication.shared.keyWindow?.rootViewController?.visibleViewController?.present(
+                viewController, animated: true, completion: nil
+            )
+        }
     }
     
     internal func oneLinkViewControllerDeInit() {

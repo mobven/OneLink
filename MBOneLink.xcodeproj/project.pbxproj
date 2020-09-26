@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6D7B62082437810E00BF5DC9 /* OneLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7B62072437810E00BF5DC9 /* OneLinkViewController.swift */; };
+		6D2C7D51251FA4B9002A4A1D /* DeinitObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2C7D50251FA4B9002A4A1D /* DeinitObserver.swift */; };
 		6D7B620A24378AEE00BF5DC9 /* UIViewContController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7B620924378AEE00BF5DC9 /* UIViewContController+Extension.swift */; };
 		6D7BE47D24F7DC48004A1C1B /* MobKitCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7BE47C24F7DC47004A1C1B /* MobKitCore.xcframework */; };
 		6D8BA18E243A34C9004493A9 /* TestLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8BA18C243A34C2004493A9 /* TestLink.swift */; };
@@ -29,8 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D2C7D50251FA4B9002A4A1D /* DeinitObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeinitObserver.swift; sourceTree = "<group>"; };
 		6D7B61F52437248B00BF5DC9 /* OneLinkPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = OneLinkPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		6D7B62072437810E00BF5DC9 /* OneLinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLinkViewController.swift; sourceTree = "<group>"; };
 		6D7B620924378AEE00BF5DC9 /* UIViewContController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewContController+Extension.swift"; sourceTree = "<group>"; };
 		6D7BE47C24F7DC47004A1C1B /* MobKitCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MobKitCore.xcframework; sourceTree = "<group>"; };
 		6D8BA18C243A34C2004493A9 /* TestLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLink.swift; sourceTree = "<group>"; };
@@ -145,8 +145,8 @@
 			children = (
 				6D7B61F52437248B00BF5DC9 /* OneLinkPlayground.playground */,
 				6D93205D2434C64B004C8A3C /* OneLink.swift */,
-				6D7B62072437810E00BF5DC9 /* OneLinkViewController.swift */,
 				6D7B620924378AEE00BF5DC9 /* UIViewContController+Extension.swift */,
+				6D2C7D50251FA4B9002A4A1D /* DeinitObserver.swift */,
 			);
 			path = MBOneLink;
 			sourceTree = "<group>";
@@ -308,7 +308,7 @@
 			files = (
 				6D93205E2434C64B004C8A3C /* OneLink.swift in Sources */,
 				6D7B620A24378AEE00BF5DC9 /* UIViewContController+Extension.swift in Sources */,
-				6D7B62082437810E00BF5DC9 /* OneLinkViewController.swift in Sources */,
+				6D2C7D51251FA4B9002A4A1D /* DeinitObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

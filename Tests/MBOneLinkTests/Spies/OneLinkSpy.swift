@@ -22,8 +22,11 @@ class OneLinkSpy: OneLink {
     
     /// Navigate to like dismissing it immediately.
     private func navigateToLink(_ oneLink: OneLinkable) {
-        let parentController = OneLinkViewControllerSpy(with: oneLink.viewController)
-        parentController.dismiss(animated: true, completion: nil)
+        guard let viewController = oneLink.viewController else { fatalError() }
+        DeinitObserver.onObjectDeinit(forObject: viewController) {
+            OneLinkSpy.sharedSpy.oneLinkViewControllerDeInit()
+        }
+        viewController.dismiss(animated: true, completion: nil)
     }
     
     override internal func oneLinkViewControllerDeInit() {
@@ -32,14 +35,6 @@ class OneLinkSpy: OneLink {
             return
         }
         OneLinkSpy.sharedSpy.presentPendingLinks()
-    }
-    
-}
-
-class OneLinkViewControllerSpy: OneLinkViewController {
-    
-    deinit {
-        OneLinkSpy.sharedSpy.oneLinkViewControllerDeInit()
     }
     
 }

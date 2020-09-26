@@ -60,6 +60,10 @@ class OneLinkTests: XCTestCase {
 
 extension OneLinkTests: OneLinkDelegate {
     
+    func oneLinkPendingNavigation(_ oneLink: OneLinkable) {
+        XCTAssert(true)
+    }
+    
     func oneLinkAllLinksCompleted() {
         XCTAssert(true)
     }

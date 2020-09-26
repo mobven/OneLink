@@ -21,6 +21,8 @@ enum AppLink: OneLinkable {
         }
     }
     
+    /// Return view controller instance to be shown when link is received.
+    /// Return nil, if links are navigated manually with OneLink.shared().delegate
     var viewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         switch self {
@@ -122,6 +124,29 @@ If your app has links with state `waitingForApproval`, do not forget to call `pr
 OneLink.shared().presentPendingLinks()
 ```
 
-```
 If while waiting for this call, user taps multiple notifications with `waitingForApproval` state, they will be presented one by one after calling `presentPendingLinks`. You may get notified about the result of pending links with `OneLinkDelegate`.
+```swift
+extension MainViewController: OneLinkDelegate {
+    func oneLinkPendingNavigation(_ oneLink: OneLinkable) {
+        guard let link = oneLink as? AppLink else { return }
+        guard presentedViewController != nil else {
+            routeTo(link: link)
+            return
+        }
+        dismiss(animated: false) { [weak self] in
+            self?.routeTo(link: link)
+        }
+    }
+    
+    private func routeTo(link: AppLink) {
+        switch link {
+        case .announcements:
+            showToAnnouncements()
+        }
+    }
+    
+    func oneLinkAllLinksCompleted() {
+        
+    }
+}
 ```
