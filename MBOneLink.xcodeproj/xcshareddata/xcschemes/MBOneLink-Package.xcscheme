@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1140"
+   LastUpgradeVersion = "9999"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6D93203D2434C53E004C8A3C"
+               BlueprintIdentifier = "MBOneLink::MBOneLink"
                BuildableName = "MBOneLink.framework"
                BlueprintName = "MBOneLink"
                ReferencedContainer = "container:MBOneLink.xcodeproj">
@@ -26,24 +26,13 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES"
-      onlyGenerateCoverageForSpecifiedTargets = "YES">
-      <CodeCoverageTargets>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6D93203D2434C53E004C8A3C"
-            BuildableName = "MBOneLink.framework"
-            BlueprintName = "MBOneLink"
-            ReferencedContainer = "container:MBOneLink.xcodeproj">
-         </BuildableReference>
-      </CodeCoverageTargets>
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6D9320462434C53E004C8A3C"
+               BlueprintIdentifier = "MBOneLink::MBOneLinkTests"
                BuildableName = "MBOneLinkTests.xctest"
                BlueprintName = "MBOneLinkTests"
                ReferencedContainer = "container:MBOneLink.xcodeproj">
@@ -68,15 +57,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6D93203D2434C53E004C8A3C"
-            BuildableName = "MBOneLink.framework"
-            BlueprintName = "MBOneLink"
-            ReferencedContainer = "container:MBOneLink.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

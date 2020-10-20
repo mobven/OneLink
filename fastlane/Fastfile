@@ -19,7 +19,8 @@ desc "Export xcframework"
 lane :export_xcframework do
   create_xcframework(
     project: 'MBOneLink.xcodeproj',
-    scheme: 'MBOneLink',
+    product_name: 'MBOneLink',
+    scheme: 'MBOneLink-Package',
     include_bitcode: true,
     destinations: ['iOS'],
     xcframework_output_directory: 'xcframework'
