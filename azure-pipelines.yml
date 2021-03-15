@@ -1,0 +1,73 @@
+variables:
+- name: SONAR_PROJECT_KEY
+  value: 'com.mobven.ios.oneLink.sb'
+
+- name: SONAR_PROJECT_NAME
+  value: 'OneLink'
+
+- name: SONAR_KEY
+  value: '77e23545c9e2f20f96a93b0ffd8b83811471fcb3'
+
+- name: SONAR_URL
+  value: 'http://farm.mobven.com:9000'
+
+- name: COVERAGE_PATH
+  value: '$(Pipeline.Workspace)/s/sonarqube-generic-coverage.xml'
+
+- name: ts
+  value: ' '
+
+- name: PROJECT_ICON
+  value: 'https://www.amchamksv.org/wp-content/uploads/2018/05/bkt.png'
+
+- name: SLACK_SH
+  value: '/Users/mobven/Desktop/slack-message-broker.sh'
+
+- name: SLACK_DATA
+  value: '$(SONAR_PROJECT_NAME) $(Build.BuildNumber) https://www.youtube.com/watch?v=OB09mmZvlsw "Onur POLAT" $(Build.SourceBranch) $(PROJECT_ICON)'
+
+- group: common
+
+pool: 'Default'
+
+steps:
+- script: |
+    bash $(SLACK_SH) Preparation 0 $(SLACK_DATA) 1> /Users/mobven/Desktop/test.txt 2>&1 </dev/null
+  displayName: Preparation
+
+- task: VariableSetTask@1
+  inputs:
+    VariableName: 'ts'
+    Value: '$(cat /Users/mobven/Desktop/test.txt)'
+    IsSecret: false
+
+- script: |
+    bash $(SLACK_SH) Build $(ts) $(SLACK_DATA)
+    rm -rf sonar-reports
+    rm -rf reports/*
+  displayName: 'Build'
+
+- script: |
+    bash $(SLACK_SH) Test $(ts) $(SLACK_DATA)
+    xcodebuild -scheme MBOneLink -sdk iphonesimulator -derivedDataPath Build/ -destination 'platform=iOS Simulator,name=iPhone 11,OS=latest' test -enableCodeCoverage YES
+  displayName: 'Test'
+
+- script: |
+    bash $(SLACK_SH) 'Code Coverage' $(ts) $(SLACK_DATA)
+    bash xccov-to-sonarqube-generic.sh Build/Logs/Test/*.xcresult/ > sonarqube-generic-coverage.xml
+  displayName: 'Code Coverage'
+
+
+- script: |
+    bash $(SLACK_SH) 'Quality Check' $(ts) $(SLACK_DATA)
+    sonar-scanner -Dsonar.host.url=$(SONAR_URL) -Dsonar.login=$(SONAR_KEY) -Dsonar.projectKey=$(SONAR_PROJECT_KEY) -Dsonar.projectName=$(SONAR_PROJECT_NAME) -Dsonar.coverageReportPaths=$(COVERAGE_PATH) -Dsonar.cfamily.build-wrapper-output.bypass=true
+  displayName: 'Quality Check'
+
+- script: |
+    bash $(SLACK_SH) 'Quality Gate' $(ts) $(SLACK_DATA)
+  #  bash quality-gates-checker.sh $(SONAR_KEY) $(SONAR_URL) $(Pipeline.Workspace)/s/.scannerwork/report-task.txt 
+  displayName: 'Quality Gate'
+
+- script: |
+    bash $(SLACK_SH) Success $(ts) $(SLACK_DATA)
+  displayName: Finish
