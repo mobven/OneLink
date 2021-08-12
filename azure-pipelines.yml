@@ -9,7 +9,7 @@ variables:
   value: '77e23545c9e2f20f96a93b0ffd8b83811471fcb3'
 
 - name: SONAR_URL
-  value: 'http://farm.mobven.com:9000'
+  value: 'http://devops.mobven.local:9000'
 
 - name: COVERAGE_PATH
   value: '$(Pipeline.Workspace)/s/sonarqube-generic-coverage.xml'
