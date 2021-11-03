@@ -28,7 +28,7 @@ public enum OneLinkableState: Int, RawRepresentable {
 }
 
 /// Delegate to inform you about OneLink navigations.
-public protocol OneLinkDelegate: class {
+public protocol OneLinkDelegate: AnyObject {
     /// Called when there is no link to be presented so that your application can continue to its regular flow.
     func oneLinkAllLinksCompleted()
     /// Called when deeplink has no view controller, and application should navigate, manually.
