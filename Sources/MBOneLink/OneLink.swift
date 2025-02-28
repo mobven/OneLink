@@ -60,7 +60,8 @@ public class OneLink: MobKitComponent {
     }
     
     internal var pendingLinks: [OneLinkable] = []
-    
+    public var presentationDelay: Double = 0.4
+
     /// `OneLinkDelegate` instance to listen pending link dismiss events.
     public weak var delegate: OneLinkDelegate?
     
@@ -89,7 +90,7 @@ public class OneLink: MobKitComponent {
     }
     
     private func navigateToLink(_ oneLink: OneLinkable) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + presentationDelay) { [weak self] in
             guard let viewController = oneLink.viewController else {
                 self?.delegate?.oneLinkPendingNavigation(oneLink)
                 return
