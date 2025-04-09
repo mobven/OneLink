@@ -89,7 +89,7 @@ public class OneLink: MobKitComponent {
     }
     
     private func navigateToLink(_ oneLink: OneLinkable) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { [weak self] in
+        DispatchQueue.main.async() { [weak self] in
             guard let viewController = oneLink.viewController else {
                 self?.delegate?.oneLinkPendingNavigation(oneLink)
                 return
